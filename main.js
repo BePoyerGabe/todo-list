@@ -26,7 +26,7 @@ document.querySelector('.add').addEventListener('click', () => {
     taskDiv.appendChild(button)
 
     button.addEventListener('click', ()=> {
-    
+        button.parentElement.remove()
     })
 
 })
