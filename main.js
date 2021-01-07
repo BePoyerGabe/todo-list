@@ -8,7 +8,7 @@ document.querySelector('.add').addEventListener('click', () => {
     const paragraph = document.createElement('p')
     const button = document.createElement('button')
 
-    
+    taskDiv.classList.add('todo')
     let today = new Date()
     today = Intl.DateTimeFormat('pt-BR').format(today)
 
