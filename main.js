@@ -1,12 +1,39 @@
 const input = document.querySelector('#taskField')
 const todos = document.querySelector('.todos')
-const numbersTasksSection = document.querySelectorAll('section')
+// let ctx = document.querySelector('#piechart').getContext('2d')
+
+const numbersTasksSpan = document.querySelectorAll('span')
 
 const tasks = {
     completed: 0,
     inProgress: 0,
     deleted: 0
 }
+
+// let chart = new Chart(ctx, {
+//     type: 'doughnut',
+
+//     data: {
+//         labels: ['Em progresso', 'Concluidas', 'Apagadas'],
+
+//         datasets: [{
+        
+//             data: [
+//                 tasks.completed,
+//                 tasks.inProgress,
+//                 tasks.deleted
+//             ],
+        
+//             backgroundColor: ['green', 'grey', 'red'],
+
+//             label: 'Teste'       
+//         }],        
+//     },
+//     options: {
+//         cutoutPercentage: 50,
+//     }
+// })
+
 
 document.querySelector('.add').addEventListener('click', () => {
     const taskDiv = document.createElement('div')
@@ -15,7 +42,7 @@ document.querySelector('.add').addEventListener('click', () => {
     const button = document.createElement('button')
     const deleteBtn = document.createElement('button')
 
-    numbersTasksSection[1].textContent = ++tasks.inProgress
+    numbersTasksSpan[1].textContent = ++tasks.inProgress
 
     taskDiv.classList.add('todo')
     let today = new Date()
@@ -42,15 +69,15 @@ document.querySelector('.add').addEventListener('click', () => {
 
 
     button.addEventListener('click', ()=> {
-        numbersTasksSection[1].textContent = --tasks.inProgress
-        numbersTasksSection[0].textContent = ++tasks.completed
+        numbersTasksSpan[1].textContent = --tasks.inProgress
+        numbersTasksSpan[0].textContent = ++tasks.completed
 
         button.parentElement.remove()
     })
 
     deleteBtn.addEventListener('click', ()=> {
-        numbersTasksSection[1].textContent = --tasks.inProgress
-        numbersTasksSection[2].textContent = ++tasks.deleted
+        numbersTasksSpan[1].textContent = --tasks.inProgress
+        numbersTasksSpan[2].textContent = ++tasks.deleted
 
         deleteBtn.parentElement.remove()
     })

@@ -105,3 +105,32 @@ h1 {
     cursor: pointer;
 }
 
+.status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    border: 2px solid #4045DB;
+    min-height: 200px;
+    width: 1000px;
+    margin: 32px auto;
+}
+
+.status section {
+    display: flex;
+    flex-direction: column;
+}
+
+.status section:not(:first-child()) {}
+
+.status section p {
+
+}
+
+/* .chart-container{
+    width: 800px;
+    height: 800px;
+    position: relative;
+    
+} */
+
