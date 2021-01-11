@@ -56,10 +56,10 @@ h1 {
 .todos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    width: 1000px;
+    width: 900px;
     justify-content: center;
     margin: 48px auto 0;
-    grid-gap: 12px;
+    grid-gap: 24px;
 }
 
 .todo {
@@ -107,26 +107,62 @@ h1 {
 
 .status {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 16px;
-    border: 2px solid #4045DB;
-    min-height: 200px;
-    width: 1000px;
-    margin: 32px auto;
+    position: absolute;
+    bottom: 32px;
+    left: 16px;
+
 }
+
+.status p:nth-child(4) {
+    position: absolute;
+    top: -36px;
+    width: 100%;
+    text-align: right;
+    margin-bottom: 10px;
+    color: #777777;
+    font-weight: bold;
+    border-bottom: 2px solid #777777;
+}
+
+/* .status p:nth-child(4)::before {
+    content: '';
+    position: absolute;
+    border: 1px solid gray;
+    width: 65px;
+    transform: rotate(180deg)
+} */
 
 .status section {
     display: flex;
     flex-direction: column;
+    padding: 12px;
+    text-align: center;
+    color: white;
+    border-radius: 16px;
+
 }
 
-.status section:not(:first-child()) {}
+.status section:first-child {
+    background-color: #29b36b;
+} 
 
-.status section p {
-
+.status section:nth-child(2) {
+    background-color: #777777;
 }
 
+.status section:nth-child(3) {
+    background-color: #db2a7f;
+}
+
+.status section:not(:first-child) {
+    margin-left: 32px;
+}
+
+.status section span {
+    margin-bottom: 8px;
+    font-size: 22px;
+    font-weight: 700;
+}
 /* .chart-container{
     width: 800px;
     height: 800px;

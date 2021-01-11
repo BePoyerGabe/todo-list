@@ -50,6 +50,8 @@ document.querySelector('.add').addEventListener('click', () => {
 
     todos.appendChild(taskDiv)
     
+    input.value == '' ? true : false
+
     let newTask = input.value
     input.value = ''
     taskTitle.textContent = newTask
